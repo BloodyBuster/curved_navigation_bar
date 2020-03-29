@@ -110,14 +110,23 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                   0,
                   -(1 - _buttonHide) * 80,
                 ),
-                child: Material(
-                  color: widget.buttonBackgroundColor ?? widget.color,
-                  type: MaterialType.circle,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: _icon,
+                child: Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(color: Colors.black12,
+                          blurRadius: 10.0,
+                          offset: Offset(0.0, 10.0))
+                    ],
                   ),
-                ),
+                  child: Material(
+                    color: widget.buttonBackgroundColor ?? widget.color,
+                    type: MaterialType.circle,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: _icon,
+                    ),
+                  ),
+                )
               ),
             ),
           ),
